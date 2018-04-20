@@ -1,14 +1,45 @@
-language: node_js
-node_js:
-  - "8.11.1"
-before_script:
-  - npm install -g @angular/cli
-  - npm install --save @angular/material @angular/cdk
-  - "sudo chown root /opt/google/chrome/chrome-sandbox"
-  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+# language: node_js
+# node_js:
+#   - "8.11.1"
+# before_script:
+#   - npm install -g @angular/cli
+#   - npm install --save @angular/material @angular/cdk
+#   - "sudo chown root /opt/google/chrome/chrome-sandbox"
+#   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+# dist: trusty
+# addons:
+#   chrome: stable
+# before_install:
+#   - # start your web application and listen on `localhost`
+#   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
+
+sudo: false
 dist: trusty
+language: node_js
+
+cache:
+  directories:
+    - node_modules
+
 addons:
   chrome: stable
+
+node_js:
+  - "6"
+  - "7"
+  - "8"
+
+matrix:
+  fast_finish: true
+
 before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
+  - npm install npm@5 -g
+  - npm cache verify
+  - npm prune
+  - npm update
+
+install:
+  - npm install
+
+script:
+  - npm run ci:travis
