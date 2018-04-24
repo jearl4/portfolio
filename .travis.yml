@@ -9,11 +9,6 @@ node_js:
 #   only:
 #     - master
 
-cache:
-  directories:
-    - "node_modules"
-    - ".material-cache"
-
 before_install:  
  - export CHROME_BIN=/usr/bin/google-chrome
  - export DISPLAY=:99.0 
