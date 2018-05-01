@@ -1,11 +1,15 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <h1>J.T. Earl</h1>
+<nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>J.T. Earl</h1>
 
-    <span class="navbar-spacer"></span>
-    
-    <button mat-button>About</button>
-    <button mat-button>Services</button>
-    <button mat-button>Contact</button>
-  </mat-toolbar-row>
-</mat-toolbar>
+      <span class="navbar-spacer"></span>
+
+      <button mat-button routerLink="/about" routerLinkActive="active">About</button>
+      <button mat-button>Services</button>
+      <button mat-button>Contact</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nav>
+<!-- routed view goes here -->
+<router-outlet></router-outlet>
