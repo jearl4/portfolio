@@ -1,0 +1,20 @@
+.poem ul, .poem ol{
+    list-style-type: none;
+}
+
+.poem li {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    padding-bottom: 0px;
+}
+
+.poem li:first-child::first-letter{
+  font-size:26px;
+  font-style:italic;
+  padding-right:3px;
+}
+
+.poem li:not(:first-child)
+{
+  margin-left: 20px;
+}
