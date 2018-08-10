@@ -2,23 +2,23 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
 
-import { LandingPageComponent } from './landing-page.component';
+import { CapmFormComponent } from './capm-form.component';
 
-describe('LandingPageComponent', () => {
-  let component: LandingPageComponent;
-  let fixture: ComponentFixture<LandingPageComponent>;
+describe('CapmFormComponent', () => {
+  let component: CapmFormComponent;
+  let fixture: ComponentFixture<CapmFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ BrowserAnimationsModule,
-        MaterialModule ],
-      declarations: [ LandingPageComponent ]
+      imports: [BrowserAnimationsModule,
+        MaterialModule],
+      declarations: [CapmFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LandingPageComponent);
+    fixture = TestBed.createComponent(CapmFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
