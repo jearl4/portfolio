@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
 
 import { CapmFormComponent } from './capm-form.component';
@@ -9,10 +10,11 @@ describe('CapmFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MaterialModule ],
-      declarations: [ CapmFormComponent ]
+      imports: [BrowserAnimationsModule,
+        MaterialModule],
+      declarations: [CapmFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
