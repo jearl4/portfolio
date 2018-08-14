@@ -9,14 +9,16 @@ import { Capm } from '../capm/capm';
 })
 export class CapmFormComponent implements OnInit {
 
-  koModel = new Capm(0, 2.064, .56, 6.0);
+  model = new Capm(0, 2.064, .56, 6.0);
 
   submitted = false;
+
+  newCapm() { this.model = new Capm(0, 0, 0, 0) }
 
   onsubmit() { this.submitted = true; }
 
   // clean up after dev
-  get diagnostic() { return JSON.stringify(this.koModel); }
+  get diagnostic() { return JSON.stringify(this.model); }
 
   constructor() { }
 
