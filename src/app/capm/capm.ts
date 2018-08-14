@@ -1,8 +1,8 @@
 export class Capm {
     constructor(
-        private rateOfReturn: number,
-        private riskFreeRate: number,
-        private beta: number,
-        private marketRate: number
+        public rateOfReturn: number,
+        public riskFreeRate: number,
+        public beta: number,
+        public marketRate: number
     ) { }
 }
