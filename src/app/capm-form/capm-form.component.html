@@ -4,8 +4,9 @@
     <mat-form-field>
       <label for="riskFreeRate">Risk Free Rate</label>
       <input matInput type="number" class="form-control" id="riskFreeRate" value="2.964" required [(ngModel)]="koModel.riskFreeRate"
-        name="riskFreeRate">
-    </mat-form-field>
+        name="riskFreeRate" #name="ngModel">
+      </mat-form-field>
+      <div [hidden]="koModel.valid || koModel.pristine"></div>
 
     <div>
       <mat-form-field>
