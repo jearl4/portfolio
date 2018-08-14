@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Cap M Form</h1>
-  <form form #capmForm="ngForm">
+  <h4>The CAPM model says the expected return of a security or a portfolio equals the rate on a risk-free security plus a risk
+    premium. If this expected return does not meet or beat the required return, then the investment should not be undertaken</h4>
+  <form (ngSubmit)="onSubmit" #capmForm="ngForm">
     <mat-form-field>
       <label for="riskFreeRate">Risk Free Rate</label>
       <input matInput type="number" class="form-control" id="riskFreeRate" value="2.964" required [(ngModel)]="model.riskFreeRate"
@@ -23,7 +25,8 @@
     <div>
       <mat-form-field>
         <label for="marketRate">Market Return</label>
-        <input matInput type="number" class="form-control" id="marketRate" value="6.0" required [(ngModel)]="model.marketRate" name="marketRate" #marketRate="ngModel">
+        <input matInput type="number" class="form-control" id="marketRate" value="6.0" required [(ngModel)]="model.marketRate" name="marketRate"
+          #marketRate="ngModel">
       </mat-form-field>
     </div>
     <div [hidden]="marketRate.valid || marketRate.pristine" class="alert alert-danger">
@@ -33,7 +36,7 @@
     <div>
       CapmM is: {{model.riskFreeRate}} + {{model.beta}}({{model.marketRate}} - {{model.riskFreeRate}}) =
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success" [disabled]="!capmForm.form.valid">Submit</button>
     <button type="button" class="btn btn-default" (click)="newCapm()">New Capm</button>
   </form>
 </div>

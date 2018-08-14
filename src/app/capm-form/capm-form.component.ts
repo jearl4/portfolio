@@ -13,7 +13,7 @@ export class CapmFormComponent implements OnInit {
 
   submitted = false;
 
-  newCapm() { this.model = new Capm(0, 0, 0, 0) }
+  newCapm() { this.model = new Capm(0, 0, 0, 0); }
 
   onsubmit() { this.submitted = true; }
 
