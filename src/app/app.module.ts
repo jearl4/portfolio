@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { MaterialModule } from './material.module';
@@ -24,7 +27,9 @@ import { CapmFormComponent } from './capm-form/capm-form.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule, // for database
   ],
   providers: [],
   bootstrap: [AppComponent]
