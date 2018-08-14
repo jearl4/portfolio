@@ -9,7 +9,7 @@ import { Capm } from '../capm/capm';
 })
 export class CapmFormComponent implements OnInit {
 
-  koModel = new Capm(0, 2.064, .56, 6);
+  koModel = new Capm(0, 2.064, .56, 6.0);
 
   submitted = false;
 
