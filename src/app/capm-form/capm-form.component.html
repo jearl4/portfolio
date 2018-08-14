@@ -1,25 +1,30 @@
 <div class="container">
   <h1>Cap M Form</h1>
-  <form>
+  <form form #capmForm="ngForm">
     <mat-form-field>
       <label for="riskFreeRate">Risk Free Rate</label>
-      <input matInput type="number" class="form-control" id="riskFreeRate" value="2.964" required>
+      <input matInput type="number" class="form-control" id="riskFreeRate" value="2.964" required [(ngModel)]="koModel.riskFreeRate"
+        name="riskFreeRate">
     </mat-form-field>
 
     <div>
       <mat-form-field>
         <label for="beta">Stock Beta</label>
-        <input matInput type="number" class="form-control" id="beta" value=".50" required>
+        <input matInput type="number" class="form-control" id="beta" value=".50" required [(ngModel)]="koModel.beta" name="beta">
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field>
-        <label for="marketReturn">Market Return</label>
-        <input matInput type="number" class="form-control" id="marketReturn" value="6" required>
+        <label for="marketRate">Market Return</label>
+        <input matInput type="number" class="form-control" id="marketRate" value="6.0" required [(ngModel)]="koModel.marketRate"
+          name="marketRate">
       </mat-form-field>
     </div>
 
+    <div>
+      CapmM is: {{koModel.riskFreeRate}} + {{koModel.beta}}({{koModel.marketRate}} - {{koModel.riskFreeRate}}) =
+    </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
