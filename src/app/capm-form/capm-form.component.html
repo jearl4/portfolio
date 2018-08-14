@@ -40,5 +40,6 @@
   </div>
   <div [hidden]="!submitted">
     CapmM is: {{model.riskFreeRate}} + {{model.beta}}({{model.marketRate}} - {{model.riskFreeRate}}) = {{model.rateOfReturn}}
+    <button type="button" class="btn btn-default" (click)="newForm()">New Capm</button>
   </div>
 </div>

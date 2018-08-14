@@ -19,6 +19,11 @@ export class CapmFormComponent implements OnInit {
   this.submitted = true;
     this.model.rateOfReturn = this.model.riskFreeRate + this.model.beta * (this.model.marketRate - this.model.riskFreeRate);
   }
+
+  newForm() {
+    this.submitted = false;
+  }
+
   constructor() { }
 
   ngOnInit() {
