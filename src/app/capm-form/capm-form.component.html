@@ -2,41 +2,43 @@
   <h1>Cap M Form</h1>
   <h4>The CAPM model says the expected return of a security or a portfolio equals the rate on a risk-free security plus a risk
     premium. If this expected return does not meet or beat the required return, then the investment should not be undertaken</h4>
-  <form (ngSubmit)="onSubmit" #capmForm="ngForm">
-    <mat-form-field>
-      <label for="riskFreeRate">Risk Free Rate</label>
-      <input matInput type="number" class="form-control" id="riskFreeRate" value="2.964" required [(ngModel)]="model.riskFreeRate"
-        name="riskFreeRate" #riskFreeRate="ngModel">
-    </mat-form-field>
-    <div [hidden]="riskFreeRate.valid || riskFreeRate.pristine" class="alert alert-danger">
-      Risk free rate is required
-    </div>
-
-    <div>
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit" #capmForm="ngForm">
       <mat-form-field>
-        <label for="beta">Stock Beta</label>
-        <input matInput type="number" class="form-control" id="beta" value=".50" required [(ngModel)]="model.beta" name="beta" #beta="ngModel">
+        <label for="riskFreeRate">Risk Free Rate</label>
+        <input matInput type="number" class="form-control" id="riskFreeRate" value="2.964" required [(ngModel)]="model.riskFreeRate"
+          name="riskFreeRate" #riskFreeRate="ngModel">
       </mat-form-field>
-    </div>
-    <div [hidden]="beta.valid || beta.pristine" class="alert alert-danger">
-      Stock beta is required
-    </div>
+      <div [hidden]="riskFreeRate.valid || riskFreeRate.pristine" class="alert alert-danger">
+        Risk free rate is required
+      </div>
 
-    <div>
-      <mat-form-field>
-        <label for="marketRate">Market Return</label>
-        <input matInput type="number" class="form-control" id="marketRate" value="6.0" required [(ngModel)]="model.marketRate" name="marketRate"
-          #marketRate="ngModel">
-      </mat-form-field>
-    </div>
-    <div [hidden]="marketRate.valid || marketRate.pristine" class="alert alert-danger">
-      Market rate is required
-    </div>
+      <div>
+        <mat-form-field>
+          <label for="beta">Stock Beta</label>
+          <input matInput type="number" class="form-control" id="beta" value=".50" required [(ngModel)]="model.beta" name="beta" #beta="ngModel">
+        </mat-form-field>
+      </div>
+      <div [hidden]="beta.valid || beta.pristine" class="alert alert-danger">
+        Stock beta is required
+      </div>
 
-    <div>
-      CapmM is: {{model.riskFreeRate}} + {{model.beta}}({{model.marketRate}} - {{model.riskFreeRate}}) =
-    </div>
-    <button type="submit" class="btn btn-success" [disabled]="!capmForm.form.valid">Submit</button>
-    <button type="button" class="btn btn-default" (click)="newCapm()">New Capm</button>
-  </form>
+      <div>
+        <mat-form-field>
+          <label for="marketRate">Market Return</label>
+          <input matInput type="number" class="form-control" id="marketRate" value="6.0" required [(ngModel)]="model.marketRate" name="marketRate"
+            #marketRate="ngModel">
+        </mat-form-field>
+      </div>
+      <div [hidden]="marketRate.valid || marketRate.pristine" class="alert alert-danger">
+        Market rate is required
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!capmForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newCapm()">New Capm</button>
+    </form>
+  </div>
+  <div [hidden]="!submitted">
+    CapmM is: {{model.riskFreeRate}} + {{model.beta}}({{model.marketRate}} - {{model.riskFreeRate}}) = {{model.rateOfReturn}}
+  </div>
 </div>
