@@ -1,7 +1,14 @@
 .example-icon {
-    padding: 0 14px;
-  }
-  
-  .navbar-spacer {
-    flex: 1 1 auto;
-  }
+  padding: 0 14px;
+}
+
+.navbar-spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  min-width: 319px;
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
