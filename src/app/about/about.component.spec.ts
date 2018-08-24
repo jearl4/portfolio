@@ -9,10 +9,10 @@ describe('AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[MaterialModule],
-      declarations: [ AboutComponent ]
+      imports: [MaterialModule],
+      declarations: [AboutComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
