@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-declare var $: any;
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = 'app';
   restItems: any;
-  restItemsUrl = $.getJSON('http://cors.io/?https://financialmodelingprep.com/api/stock/losers', function () { });
+  restItemsUrl = $.getJSON('https://financialmodelingprep.com/api/stock/losers', function () { });
 
   constructor(private http: HttpClient) { }
 
