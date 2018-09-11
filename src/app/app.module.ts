@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CapmFormComponent } from './capm-form/capm-form.component';
+import { HelloWorldService } from './hello-world/hello-world.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CapmFormComponent } from './capm-form/capm-form.component';
     AngularFireDatabaseModule, // for database
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [HelloWorldService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

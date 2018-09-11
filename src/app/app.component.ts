@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import * as $ from 'jquery';
+import {Component, OnInit} from '@angular/core';
+import {HelloWorldService} from '../app/hello-world/hello-world.service';
 
 @Component({
   selector: 'app-root',
@@ -9,29 +7,16 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  restItems: any;
-  restItemsUrl = $.getJSON('https://financialmodelingprep.com/api/stock/losers', function () { });
 
-  constructor(private http: HttpClient) { }
+  title;
+
+  constructor(private hw: HelloWorldService) {}
 
   ngOnInit() {
-    this.getRestItems();
+    this.hw.getTitle()
+      .subscribe(data => this.title = data.title);
+
+    console.log(this.title);
   }
 
-  getRestItems(): void {
-    this.restItemsServiceGetRestItems()
-      .subscribe(
-        restItems => {
-          this.restItems = restItems;
-          console.log(this.restItems);
-        }
-      );
-  }
-
-  restItemsServiceGetRestItems() {
-    return this.http
-      .get<any[]>(this.restItemsUrl)
-      .pipe(map(data => data));
-  }
 }
