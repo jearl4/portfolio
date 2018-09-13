@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {HelloWorldService} from '../app/hello-world/hello-world.service';
+import { Component, OnInit } from '@angular/core';
+import { HelloWorldService } from '../app/hello-world/hello-world.service';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,12 @@ export class AppComponent implements OnInit {
 
   title;
 
-  constructor(private hw: HelloWorldService) {}
+  constructor(private hw: HelloWorldService) { }
 
   ngOnInit() {
     this.hw.getTitle()
-      .subscribe(data => this.title = data.title);
+      .subscribe(data => this.title = data);
 
     console.log(this.title);
   }
-
 }
