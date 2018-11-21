@@ -49,4 +49,10 @@
     not intended to and does not constitute investment advice. Your use of the information on the website or materials linked
     from the Web is at your own risk.
   </p>
-</div>
+</div> -->
+
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>

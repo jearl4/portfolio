@@ -12,5 +12,6 @@ export const environment = {
     projectId: 'portfolio-51dd4',
     storageBucket: 'portfolio-51dd4.appspot.com',
     messagingSenderId: '120115284338'
-  }
+  },
+  serverUrl: 'http://localhost:4201'
 };
