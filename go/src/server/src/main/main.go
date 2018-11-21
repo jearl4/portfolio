@@ -29,7 +29,6 @@ func main() {
 	stock := getStock()
 	log.Print(stock)
 
-	// result, err := client.Collection("sampleData").Doc("stock").Set(context.Background(), map[string]interface{})
 	_, _, err = client.Collection("stock").Add(context.Background(), map[string]interface{}{
 		"blob": stock,
 	})
